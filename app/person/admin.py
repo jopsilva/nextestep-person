@@ -1,3 +1,10 @@
 from django.contrib import admin
+from person.models import Type
 
-# Register your models here.
+
+class Types(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    list_display_links = ('id', 'name')
+    search_fields = ('name',)
+
+admin.site.register(Type, Types)
